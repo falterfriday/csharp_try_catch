@@ -16,15 +16,28 @@ namespace try_catch
             //execute code in catch block
             try
             {
-                string[] fruit = { "Apples", "Bananas", "Oranges" };
+                string[] fruit = { "Apples", null, "Oranges" };
                 for (int i = 0; i <= fruit.Length; i++)
                 {
+                    //if (fruit[i]==null)
+                    //{
+                    //    throw (new ArgumentNullException());
+                    //}
+                    
                     Console.WriteLine(fruit[i]);
                 }
             }
             //name the exception and console it
-            catch (Exception ex)
+            //.Message prints out a more concise error message
+            //similar to Ruby's getFullMessages method
+            catch (IndexOutOfRangeException ex)
             {
+                Console.WriteLine("- index problem");
+                Console.WriteLine(ex.Message);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Console.WriteLine("- null problem");
                 Console.WriteLine(ex.Message);
             }
             
