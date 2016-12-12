@@ -19,10 +19,10 @@ namespace try_catch
                 string[] fruit = { "Apples", null, "Oranges" };
                 for (int i = 0; i <= fruit.Length; i++)
                 {
-                    //if (fruit[i]==null)
-                    //{
-                    //    throw (new ArgumentNullException());
-                    //}
+                    if (fruit[i] == null)
+                    {
+                        throw (new ArgumentNullException());
+                    }
                     
                     Console.WriteLine(fruit[i]);
                 }
@@ -39,6 +39,10 @@ namespace try_catch
             {
                 Console.WriteLine("- null problem");
                 Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("finally block has been reached");
             }
             
         }
